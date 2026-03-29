@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:22-slim
+FROM node:22-slim
 
 WORKDIR /usr/src/app
 
@@ -6,6 +6,4 @@ ADD . .
 
 RUN npm ci
 
-RUN npm run build
-
-CMD ["node", "dist/main.js"]
+CMD ["npx", "tsx", "src/main.ts"]
